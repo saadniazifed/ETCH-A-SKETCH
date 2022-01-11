@@ -32,11 +32,12 @@ function newGridLayout() {
     return;
   }
 
-  const removeClass = document.querySelectorAll(".divCommonClass");
-  for (let i = 0; i < removeClass.length; i++) {
-    const element = removeClass[i];
-    element.parentNode.removeChild(element);
+  // Removing the Divs using Last Child.
+  const removeClass = document.querySelector("#container");
+  while (removeClass.firstChild) {
+    removeClass.removeChild(removeClass.lastChild);
   }
+
   // Creating Custom Divs inside container using loop.
   for (let i = 1; i <= gridLayout * gridLayout; i++) {
     container.innerHTML += '<div class="divCommonClass"></div>';
