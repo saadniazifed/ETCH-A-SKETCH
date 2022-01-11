@@ -31,13 +31,11 @@ function newGridLayout() {
   if (gridLayout > 100) {
     return;
   }
-
   // Removing the Divs using Last Child.
   const removeClass = document.querySelector("#container");
   while (removeClass.firstChild) {
     removeClass.removeChild(removeClass.lastChild);
   }
-
   // Creating Custom Divs inside container using loop.
   for (let i = 1; i <= gridLayout * gridLayout; i++) {
     container.innerHTML += '<div class="divCommonClass"></div>';
